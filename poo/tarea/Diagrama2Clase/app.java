@@ -9,7 +9,7 @@ package poo.tarea.Diagrama2Clase;
 
 /*
  La salida de este programa es: 
- 
+
 La persona nace el dia: 2000-01-01
 La persona es: Pedro
 La persona tiene vehiculo: Toyota de 4 ruedas con alarma

@@ -76,17 +76,9 @@ public class Vehiculo {
         return alarma;
     }
 
-    public String getKmMinimo() {
-        return kmMinimo;
-    }
-
-    public String getKmMaximo() {
-        return kmMaximo;
-    }
-
     @Override
     public String toString() {
-        String msgAlarma = (alarma) ? "con alarma" : "sin alarma";
+        String msgAlarma = (isAlarma()) ? "con alarma" : "sin alarma";
         return  getMarca() + " de " + getCantidadDeRuedas() + " ruedas "+msgAlarma;
     }
 
