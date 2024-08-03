@@ -11,17 +11,27 @@ public class Flota {
         setMaxVehiculos(maxVehiculos);
     }
     
+
+    public void MoverAVehiculo(Vehiculo v){
+        System.out.println("Desde Flota movemos a vehiculo:");
+        v.mover();
+    }
+
+
     public boolean addVehiculo(Vehiculo v){
         if(vehiculos.size() >= this.maxVehiculos){
+            System.out.println("No se pudo aniadir el vehiculo "+v+" porque la flota esta llena.");
             return false;
         }
         vehiculos.add(v);
         v.setFlota(this);
+        System.out.println("Se aniadio "+v+" a flota");
         return true;
     }
 
     public boolean removeVehiculo(Vehiculo v){
         if (! vehiculos.contains(v)){
+            System.out.println("No se pude remover vehiculo "+v+" porque no esta en la flota");
             return false;
         }
         vehiculos.remove(v);
@@ -29,11 +39,7 @@ public class Flota {
         return true;
     }
 
-    public void MoverAVehiculo(Vehiculo v){
-        System.out.println("Desde Flota movemos a vehiculo.");
-        v.mover();
-    }
-
+    // Setters
 
     public void setMaxVehiculos(int newMax) {
         /* si nuevo valor es menor a la cantidad de la lista actual, entonces se remueve los vehiculos sobrantes */
@@ -49,5 +55,15 @@ public class Flota {
         maxVehiculos = newMax;
     }
 
+
+    // Getters
+
+    public int getMaxVehiculos() {
+        return maxVehiculos;
+    }
+
+    public List<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
 
 }
