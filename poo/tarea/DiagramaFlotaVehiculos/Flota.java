@@ -12,9 +12,15 @@ public class Flota {
     }
     
 
-    public void MoverAVehiculo(Vehiculo v){
+    public void moverAVehiculo(Vehiculo v){
         System.out.println("Desde Flota movemos a vehiculo:");
         v.mover();
+    }
+
+    public void moverTodosLosVehiculos(){
+        for(int i=0; i<vehiculos.size(); i++){
+            vehiculos.get(i).mover();
+        }
     }
 
 
@@ -50,7 +56,7 @@ public class Flota {
         while ( newMax < vehiculos.size() ){
             Vehiculo v = vehiculos.removeLast();
             v.setFlota(null);
-            System.out.println("Desde flota nos sobraban coches asi que removemos el ultimo: "+v);
+            System.out.println("Desde flota nos sobraban vehiculos asi que removemos el ultimo: "+v);
         }
         maxVehiculos = newMax;
     }
